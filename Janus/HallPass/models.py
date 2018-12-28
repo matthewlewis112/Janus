@@ -31,11 +31,22 @@ class ClassroomReturn(models.Model):
 
 class StudentSession(models.Model):
     Student_ID = models.IntegerField()
+    Student_Name = models.CharField(blank = True, max_length= 50)
     Leave_Time = models.DateTimeField()
     Return_Time = models.DateTimeField()
 
     def __str__(self):
-        return str(self.Student_ID) + ' ' + str(self.Leave_Time)
+        if self.Student_ID == '':
+            return str(self.Student_ID) + ' - ' + str(self.Leave_Time)
+        return str(self.Student_Name) + ' - ' + str(self.Leave_Time)
+
+    def save(self):
+        # Looks for student name
+        if self.Student_Name == '':
+            foundStudent = Student.objects.filter(Student_ID = self.Student_ID).get()
+            if foundStudent:
+                self.Student_Name = foundStudent.Student_Name
+        super(StudentSession, self).save()
 
 
 class Student(models.Model):

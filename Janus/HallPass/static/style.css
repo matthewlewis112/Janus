@@ -1,0 +1,51 @@
+body {
+    font-family: Helvetica;
+    text-align: center;
+    background-image: linear-gradient(gray, white);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.LinkButton button {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 20px;
+  background-color: gold;
+  padding: 70px;
+  width: 300px;
+}
+
+.LinkButton button:hover {
+  background-color: #a17f1a;
+}
+
+label {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#id_Student_ID {
+  display: inline-block;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: gold;
+}
+
+input[type='submit']:hover {
+  background-color: #a17f1a;
+}
+
+a {
+  color: gold;
+}

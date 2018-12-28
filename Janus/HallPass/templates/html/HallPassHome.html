@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Hall Pass</title>
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
 </head>
 <body>
     <h1>Hall Pass</h1>
-    <a href="http://127.0.0.1:8000/HallPass/Leave/">
-        Leaving?
-    </a>
-    <a href="http://127.0.0.1:8000/HallPass/Return/">
-        Returning?
-    </a>
+    <div class="LinkButton">
+      <a href="http://127.0.0.1:8000/HallPass/Leave/">
+          <button type="button">Leaving?</button>
+      </a>
+    </div>
+    <div class="LinkButton">
+      <a href="http://127.0.0.1:8000/HallPass/Return/">
+          <button type="button">Returning?</button>
+      </a>
+    </div>
 </body>
 </html>
