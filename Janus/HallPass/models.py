@@ -4,7 +4,7 @@ import datetime
 
 # Create your models here.
 class ClassroomLeave(models.Model):
-    Student_ID = models.IntegerField()
+    Student_ID = models.PositiveIntegerField()
     Leave_Time = models.DateTimeField()
 
     def __str__(self):
@@ -17,7 +17,7 @@ class ClassroomLeave(models.Model):
 
 
 class ClassroomReturn(models.Model):
-    Student_ID = models.IntegerField()
+    Student_ID = models.PositiveIntegerField()
     Return_Time = models.DateTimeField()
 
     def __str__(self):
@@ -30,7 +30,7 @@ class ClassroomReturn(models.Model):
 
 
 class StudentSession(models.Model):
-    Student_ID = models.IntegerField()
+    Student_ID = models.PositiveIntegerField()
     Student_Name = models.CharField(blank = True, max_length= 50)
     Leave_Time = models.DateTimeField()
     Return_Time = models.DateTimeField()
@@ -50,7 +50,7 @@ class StudentSession(models.Model):
 
 
 class Student(models.Model):
-    Student_ID = models.IntegerField()
+    Student_ID = models.PositiveIntegerField()
     Student_Name = models.CharField(max_length=50)
 
     def __str__(self):
