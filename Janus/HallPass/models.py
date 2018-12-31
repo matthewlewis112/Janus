@@ -10,7 +10,7 @@ class ClassroomLeave(models.Model):
     def __str__(self):
         return str(self.Student_ID) + ' ' + str(self.Leave_Time)
 
-    def save(self):
+    def save(self, **kwargs):
         if self.Leave_Time is None:
             self.Leave_Time = datetime.datetime.now()
         super(ClassroomLeave, self).save()
@@ -23,7 +23,7 @@ class ClassroomReturn(models.Model):
     def __str__(self):
         return str(self.Student_ID) + ' ' + str(self.Return_Time)
 
-    def save(self):
+    def save(self, **kwargs):
         if self.Return_Time is None:
             self.Return_Time = datetime.datetime.now()
         super(ClassroomReturn, self).save()
@@ -40,7 +40,7 @@ class StudentSession(models.Model):
             return str(self.Student_ID) + ' - ' + str(self.Leave_Time)
         return str(self.Student_Name) + ' - ' + str(self.Leave_Time)
 
-    def save(self):
+    def save(self, **kwargs):
         # Looks for student name
         if self.Student_Name == '':
             foundStudent = Student.objects.filter(Student_ID = self.Student_ID).get()
